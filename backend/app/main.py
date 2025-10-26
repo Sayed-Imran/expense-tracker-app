@@ -46,7 +46,7 @@ async def health_check():
 
 
 # Serve static files from the frontend build
-static_dir = Path(__file__).parent.parent.parent / "frontend" / "dist"
+static_dir = Path(__file__).parent.parent / "frontend" / "dist"
 if static_dir.exists():
     # Mount static files (JS, CSS, images, etc.)
     app.mount("/assets", StaticFiles(directory=str(static_dir / "assets")), name="assets")
